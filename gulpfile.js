@@ -31,7 +31,7 @@ gulp.task("sass", function () {
     log("Generating CSS files " + (new Date()).toString());
     gulp.src("./css/main.scss")
 		.pipe(sass({ style: 'expanded' }))
-					.pipe(autoprefixer("last 3 version", "safari 5", "ie 8", "ie 9"))
+        .pipe(autoprefixer("last 3 version", "safari 5", "ie 8", "ie 9"))
 		.pipe(gulp.dest("./css"))
 		.pipe(rename({suffix: '.min'}))
 		.pipe(minifycss())
