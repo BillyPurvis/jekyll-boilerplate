@@ -1,3 +1,4 @@
+/*jslint node: true */
 var gulp            = require('gulp'),
     sass            = require('gulp-sass'),
     path            = require('gulp-path'),
@@ -6,7 +7,7 @@ var gulp            = require('gulp'),
     rename          = require('gulp-rename'),
     connect         = require('gulp-connect'),
     minifycss       = require('gulp-minify-css'),
-    autoprefixer    = require('gulp-autoprefixer');
+    autoprefixer    = require('gulp-autoprefixer'),
     log             = util.log;
   
 
@@ -17,23 +18,14 @@ var ports = {
 };
 
 var paths = {
-    site: "_site",
-    css: "./css/",
-    jekyll: ['_layouts/*.html', '_posts/*', '_sites']
+    jekyll: "./_site"
 };
 
-
-
-gulp.task('connect', function () {
+gulp.task('jekyll', function () {
     'use strict';
-    log("Serve those files");
-    connect.server({
-        root: paths.site,
-        livereload: true,
-        port: ports.dev
-    });
+    spawn('jekyll', ['build'], {stdio: 'inherit'});
 });
- 
+
 gulp.task("sass", function () {
     'use strict';
     log("Generating CSS files " + (new Date()).toString());
@@ -51,5 +43,16 @@ gulp.task("watch", function () {
     log("Watching Sass Files");
     gulp.watch("./css/main.scss", ["sass"]);
 });
+
+gulp.task('connect', function () {
+    'use strict';
+    log("Serve those files");
+    connect.server({
+        root: paths.jekyll,
+        livereload: true,
+        port: ports.dev
+    });
+});
+
 
 gulp.task('default', ['connect', 'sass']);
