@@ -6,6 +6,7 @@ var gulp            = require('gulp'),
     spawn           = require('child_process').spawn,
     rename          = require('gulp-rename'),
     connect         = require('gulp-connect'),
+    runSequence     = require('gulp-run-sequence'),
     minifycss       = require('gulp-minify-css'),
     autoprefixer    = require('gulp-autoprefixer'),
     log             = util.log;
@@ -21,9 +22,23 @@ var paths = {
     jekyll: "./_site"
 };
 
-gulp.task('jekyll', function () {
+gulp.task('connect', function () {
     'use strict';
-    spawn('jekyll', ['build'], {stdio: 'inherit'});
+    log("Serve those files");
+    connect.server({
+        root: paths.jekyll,
+        livereload: true,
+        port: ports.dev
+    });
+});
+
+
+gulp.task('jekyll', function (done) {
+    'use strict';
+    var jekyllExec = process.platform === "win32" ? "jekyll.bat" : "jekyll";
+    
+    spawn(jekyllExec, ['build'], {stdio: 'inherit'})
+        .on('close', done);
 });
 
 gulp.task("sass", function () {
@@ -37,32 +52,23 @@ gulp.task("sass", function () {
 		.pipe(minifycss())
 		.pipe(gulp.dest("./css"));
 });
-
-gulp.task('reload', function () {
-    'use strict';
-    gulp.src('./_site/*.html')
-        .pipe(connect.reload());
-});
-    
+ 
 gulp.task("watch", function () {
     'use strict';
     log("Watch files for changes");
     gulp.watch("./css/main.scss", ["sass"]);
     gulp.watch(['index.html', '_includes/*.html', '_layouts/*.html', '_posts/*.html'], ['jekyll']);
-    
-//    gulp.src("./_site/index.htm")
+});
+
+//gulp.task('reload', function () {
+//    'use strict';
+//    gulp.src(paths.jekyll)
 //        .pipe(connect.reload());
-});
+//});
 
-gulp.task('connect', function () {
+gulp.task('serve', function (done) {
     'use strict';
-    log("Serve those files");
-    connect.server({
-        root: paths.jekyll,
-        livereload: true,
-        port: ports.dev
-    });
+    runSequence('sass', 'jekyll', 'connect', 'watch', done);
 });
 
-
-gulp.task('default', ['connect', 'jekyll', 'watch', 'reload']);
+gulp.task('default', ['watch', 'connect']);
