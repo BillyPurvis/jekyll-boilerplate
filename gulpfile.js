@@ -27,7 +27,6 @@ gulp.task('connect', function () {
     log("Serve those files");
     connect.server({
         root: paths.jekyll,
-        livereload: true,
         port: ports.dev
     });
 });
@@ -60,11 +59,6 @@ gulp.task("watch", function () {
     gulp.watch(['index.html', '_includes/*.html', '_layouts/*.html', '_posts/*.html'], ['jekyll']);
 });
 
-//gulp.task('reload', function () {
-//    'use strict';
-//    gulp.src(paths.jekyll)
-//        .pipe(connect.reload());
-//});
 
 gulp.task('serve', function (done) {
     'use strict';
