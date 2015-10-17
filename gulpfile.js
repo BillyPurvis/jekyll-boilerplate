@@ -55,7 +55,7 @@ gulp.task("sass", function () {
 gulp.task("watch", function () {
     'use strict';
     log("Watch files for changes");
-    gulp.watch("./css/main.scss", ["sass"]);
+    gulp.watch("./css/main.scss", ["sass", "jekyll"]);
     gulp.watch(['index.html', '_includes/*.html', '_layouts/*.html', '_posts/*.html'], ['jekyll']);
 });
 
