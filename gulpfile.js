@@ -38,15 +38,20 @@ gulp.task("sass", function () {
 		.pipe(gulp.dest("./css"));
 });
 
+gulp.task('reload', function () {
+    'use strict';
+    gulp.src('./_site/*.html')
+        .pipe(connect.reload());
+});
+    
 gulp.task("watch", function () {
     'use strict';
     log("Watch files for changes");
     gulp.watch("./css/main.scss", ["sass"]);
     gulp.watch(['index.html', '_includes/*.html', '_layouts/*.html', '_posts/*.html'], ['jekyll']);
     
-    gulp.watch(['./_site/']).on('change', function () {
-        connect.reload();
-    });
+//    gulp.src("./_site/index.htm")
+//        .pipe(connect.reload());
 });
 
 gulp.task('connect', function () {
@@ -60,4 +65,4 @@ gulp.task('connect', function () {
 });
 
 
-gulp.task('default', ['connect', 'watch']);
+gulp.task('default', ['connect', 'jekyll', 'watch', 'reload']);
