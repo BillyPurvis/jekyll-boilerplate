@@ -43,7 +43,7 @@ gulp.task('jekyll', function (done) {
 gulp.task("sass", function () {
     'use strict';
     log("Generating CSS files " + (new Date()).toString());
-    gulp.src("./css/main.scss")
+    gulp.src("./_sass/main.scss")
 		.pipe(sass({ style: 'expanded' }))
         .pipe(autoprefixer("last 3 version", "safari 5", "ie 8", "ie 9"))
 		.pipe(gulp.dest("./css"))
