@@ -35,6 +35,11 @@ nav {
       nav ul li a {
         color: #34495e; }
 
+code {
+  display: block;
+  margin: 20px 0;
+  font-size: 0.7em; }
+
 html {
   font-size: 18px;
   -webkit-font-kerning: auto;

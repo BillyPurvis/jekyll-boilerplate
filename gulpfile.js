@@ -1,4 +1,5 @@
 /*jslint node: true */
+
 var gulp            = require('gulp'),
     sass            = require('gulp-sass'),
     path            = require('gulp-path'),
@@ -19,11 +20,13 @@ var ports = {
     dist: 4040
 };
 
+// paths
 var paths = {
     jekyll: "./_site",
     scripts: "./js"
 };
 
+// Start Local Server
 gulp.task('connect', function () {
     'use strict';
     log("Serve those files");
@@ -33,7 +36,7 @@ gulp.task('connect', function () {
     });
 });
 
-
+// Build Jekyll
 gulp.task('jekyll', function (done) {
     'use strict';
     var jekyllExec = process.platform === "win32" ? "jekyll.bat" : "jekyll";
@@ -42,6 +45,7 @@ gulp.task('jekyll', function (done) {
         .on('close', done);
 });
 
+// Compress Js
 gulp.task('compressJs', function () {
     'use strict';
     gulp.src('./js/*.js')
@@ -50,6 +54,7 @@ gulp.task('compressJs', function () {
         .pipe(gulp.dest('./js'));
 });
 
+// Generate SCSS files to dist 
 gulp.task('sass', function () {
     'use strict';
     log('Generating CSS files' + (new Date()).toString());
@@ -62,6 +67,7 @@ gulp.task('sass', function () {
 		.pipe(gulp.dest("./css"));
 });
  
+// Watch jekyll, scss and js files ready to compile
 gulp.task('watch', function () {
     'use strict';
     log('Watch files for changes');
@@ -70,10 +76,11 @@ gulp.task('watch', function () {
     gulp.watch(['index.html', '_includes/*.html', '_layouts/*.html', '_posts/*.html', '*/*.html'], ['jekyll']);
 });
 
-
+// Run sequentually. 
 gulp.task('serve', function (done) {
     'use strict';
     runSequence('sass', 'jekyll', 'connect', 'watch', done);
 });
 
+// Default gulp command
 gulp.task('default', ['watch', 'connect']);
