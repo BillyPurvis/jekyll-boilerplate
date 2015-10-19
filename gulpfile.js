@@ -5,6 +5,7 @@ var gulp            = require('gulp'),
     util            = require('gulp-util'),
     spawn           = require('child_process').spawn,
     rename          = require('gulp-rename'),
+    uglify          = require('gulp-uglify'),
     connect         = require('gulp-connect'),
     runSequence     = require('gulp-run-sequence'),
     minifycss       = require('gulp-minify-css'),
@@ -19,7 +20,8 @@ var ports = {
 };
 
 var paths = {
-    jekyll: "./_site"
+    jekyll: "./_site",
+    scripts: "./js"
 };
 
 gulp.task('connect', function () {
@@ -40,9 +42,17 @@ gulp.task('jekyll', function (done) {
         .on('close', done);
 });
 
-gulp.task("sass", function () {
+gulp.task('compressJs', function () {
     'use strict';
-    log("Generating CSS files " + (new Date()).toString());
+    gulp.src('./js/*.js')
+        .pipe(uglify())
+        .pipe(rename({suffix: '.min'}))
+        .pipe(gulp.dest('./js'));
+});
+
+gulp.task('sass', function () {
+    'use strict';
+    log('Generating CSS files' + (new Date()).toString());
     gulp.src("./_sass/main.scss")
 		.pipe(sass({ style: 'expanded' }))
         .pipe(autoprefixer("last 3 version", "safari 5", "ie 8", "ie 9"))
@@ -52,10 +62,11 @@ gulp.task("sass", function () {
 		.pipe(gulp.dest("./css"));
 });
  
-gulp.task("watch", function () {
+gulp.task('watch', function () {
     'use strict';
-    log("Watch files for changes");
-    gulp.watch("./css/main.scss", ["sass", "jekyll"]);
+    log('Watch files for changes');
+    gulp.watch('./_sass/*.scss', ['sass', 'jekyll']);
+    gulp.watch('./js/*.js', ['compressJs']);
     gulp.watch(['index.html', '_includes/*.html', '_layouts/*.html', '_posts/*.html', '*/*.html'], ['jekyll']);
 });
 

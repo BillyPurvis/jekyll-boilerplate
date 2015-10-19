@@ -7,33 +7,52 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Template Site</title>
+  <title>Jekyll Boilerplate</title>
   <meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
 ">
 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
   <link rel="stylesheet" href="/css/main.min.css">
-  <link rel="alternate" type="application/rss+xml" title="Template Site" href="http://yourdomain.com/feed.xml" />
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <link rel="alternate" type="application/rss+xml" title="Jekyll Boilerplate" href="http://yourdomain.com/feed.xml" />
+      <script src="/js/scripts.min.js"></script>
+
 </head>
 
     
     <body>
     
-        <header>
-    <div class="wrapper">
-    
-        <a class="site-title" href="">Template Site</a>
-        <div class="header-content">
-            <h1 class="main-title">Hello World 48.00!</h1>
-        </div>
+        
+  
+<div class="site-wrap">
+  <header>
+   <div class="inner-header">
+        <div class="site-title-contain">
+            <a class="site-title" href="">Jekyll Boilerplate</a>
+        </div> 
+        <div class="menu-toggle">
+            <i class="fa fa-bars"></i>
+        </div> 
     </div>
+    
     <nav class="nav">
         <ul class="nav-list">
             <li class="nav-item">
-                <a href="/about/index.html">About</a>
-                <a href=""></a>
-                <a href=""></a>
-                <a href=""></a>
-                <a href=""></a>
+                <a href="/about">About</a>
+            </li>
+            <li class="nav-item">
+                <a href="#">Item 2</a>
+            </li>
+            <li class="nav-item">
+                <a href="#">Item 3</a>
+            </li>
+            <li class="nav-item">
+                <a href="#">Item 4</a>
+            </li>
+            <li class="nav-item">
+                <a href="#">Item 5</a>
             </li>
         </ul>
     </nav>
@@ -45,36 +64,47 @@
     </body>
     
     <div class="main-content">
-        <div class="home">
+        <div class="site-wrapper">
+   <div class="content-wrap">
+    <h1 class="page-title">
+        Welcome to Jekyll Boilerplate
+    </h1>
+    <hr/>
+    <p class="content-text">
+        You can download this template via git in a zip or clone the                 repository directly to your directory of choice.
+        
+        <pre><code>git clone https://github.com/BillyPurvis/jekyll-boilerplate.git</code></pre>
+    </p>
+        
+    <p class="content-text">
+        You'll need to have the Jekyll and Sass Ruby Gem installed, nodeJS,
+        NPM to install the required dependencies for developlement. To 
+        install the node modules, you can run 
 
-  <h1 class="page-heading">Posts</h1>
-
-  <ul class="post-list">
-    
-      <li>
-        <span class="post-meta">Oct 18, 2015</span>
-
-        <h2>
-          <a class="post-link" href="/2015/10/18/test.html">Test</a>
-        </h2>
-      </li>
-    
-  </ul>
-    
-    <div class="main-content">
-        PLS WORK
+        <pre><code>npm install --save-dev</code></pre>
+        
+        for development. You'll also need gulp globally installed. 
+    </p>
+       
+    <p class="content-text">
+        The template is simple, the scss files are in the _sass dir and are 
+        being watched by gulp for changes, then Jekyll will be rebuilt into           _site which is then run via gulp-connect on port 4000. 
+    </p>
+       
+    <p class="content-text">
+        Jekyll's files are being watched too, adding a new directory, such as         /contact/index.html, gulp will recognise the new directory when               gulp serve task is run. 
+    </p>
+       
+    <p class="content-text">
+        To create drafts, store them into _drafts and when ready, you can 
+        move to the _posts directory for production.  
+    </p>
     </div>
-
-  <p class="rss-subscribe">subscribe here please <a href="/feed.xml">via RSS</a></p>
-
 </div>
 
     </div>
     
     <footer>
-    <div class="footer-content">
-        <h2 class="sub-title">Hello Other World</h2>
-        <span>purvisbilly@outlook.com Date</span>
-    </div>
 </footer>
+</div><!-- End of Site Wrap -->
 </html>

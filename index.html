@@ -2,26 +2,40 @@
 layout: default
 ---
 
-<div class="home">
+<div class="site-wrapper">
+   <div class="content-wrap">
+    <h1 class="page-title">
+        Welcome to Jekyll Boilerplate
+    </h1>
+    <hr/>
+    <p class="content-text">
+        You can download this template via git in a zip or clone the                 repository directly to your directory of choice.
+        
+        <pre><code>git clone https://github.com/BillyPurvis/jekyll-boilerplate.git</code></pre>
+    </p>
+        
+    <p class="content-text">
+        You'll need to have the Jekyll and Sass Ruby Gem installed, nodeJS,
+        NPM to install the required dependencies for developlement. To 
+        install the node modules, you can run 
 
-  <h1 class="page-heading">Posts</h1>
-
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
-    
-    <div class="main-content">
-        PLS WORK
+        <pre><code>npm install --save-dev</code></pre>
+        
+        for development. You'll also need gulp globally installed. 
+    </p>
+       
+    <p class="content-text">
+        The template is simple, the scss files are in the _sass dir and are 
+        being watched by gulp for changes, then Jekyll will be rebuilt into           _site which is then run via gulp-connect on port 4000. 
+    </p>
+       
+    <p class="content-text">
+        Jekyll's files are being watched too, adding a new directory, such as         /contact/index.html, gulp will recognise the new directory when               gulp serve task is run. 
+    </p>
+       
+    <p class="content-text">
+        To create drafts, store them into _drafts and when ready, you can 
+        move to the _posts directory for production.  
+    </p>
     </div>
-
-  <p class="rss-subscribe">subscribe here please <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-
 </div>
