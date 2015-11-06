@@ -2,7 +2,6 @@
 
 var gulp            = require('gulp'),
     sass            = require('gulp-sass'),
-    path            = require('gulp-path'),
     util            = require('gulp-util'),
     spawn           = require('child_process').spawn,
     rename          = require('gulp-rename'),
@@ -48,7 +47,7 @@ gulp.task('jekyll', function (done) {
 // Compress Js
 gulp.task('compressJs', function () {
     'use strict';
-    gulp.src('./js/*.js')
+    gulp.src('./js/scripts.js')
         .pipe(uglify())
         .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest('./js'));
