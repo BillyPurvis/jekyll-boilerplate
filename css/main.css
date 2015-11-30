@@ -30,8 +30,9 @@ nav {
     list-style-type: none; }
     nav ul li {
       padding: 10px 10px;
-      background: nav ul li;
-        background-background: #34495e; }
+      background: nav ul li; }
+      nav ul li :hover {
+        background: #34495e; }
       nav ul li a {
         color: #34495e; }
 
