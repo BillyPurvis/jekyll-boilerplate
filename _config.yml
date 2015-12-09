@@ -11,5 +11,5 @@ github_username:  BillyPuris
 # Build settings
 markdown: kramdown
 
-# Excludes
-exclude: [node_modules]
+# excludes
+exclude: [node_modules, gulpfile.js, package.json]
