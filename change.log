@@ -1,0 +1,26 @@
+# Change Log
+
+	______________________________________
+
+	Project: Jekyll Boilerplate
+	Developer: Billy Purvis
+
+	Last Edit Date: 18/06/16
+	Last Version Number:  0.0.0.1
+	______________________________________
+
+	Re-configure 0.0.0.1
+	______________________________________
+
+	* Removed entire contents and reset to a
+	  clean and correct HTML5 spec template
+
+	* added partials directory to sass for
+	  better management 
+
+	* altered gulpfile to accept new path for 
+	  sass files
+
+	* created a more modular approach
+
+	* added mobile css and html

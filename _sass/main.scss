@@ -1,38 +1,14 @@
+// Variables
+$bodyWhite: #fff;
+$bodyFontGrey: #4d4d4d;
+$diamondColor: #1abc9c;
+$primaryFontCol: #e74c3c;
+
+
+
 // Imports
+@import 'partials/ui';
+@import 'partials/fonts';
+@import 'partials/header';
+@import 'partials/footer';
 
-@import 'header';
-// Generic
-code {
-    display: block;
-    margin: 20px 0;
-    font-size: 0.7em;
-}
-// Structure
-html {
-    font-size: 18px;
-    font-kerning: auto;
-    font-family: Arial, sans-serif;
-}
-a {
-    text-decoration: none;
-}
-body {
-    margin: 0;
-    padding: 0;
-}
-.site-wrap {
-    overflow-x: hidden;
-}
-.site-wrapper {
-    margin: 0 auto;
-    max-width: 960px;
-    overflow-x: hidden;
-}
-.content-wrap {
-    width: 90%;
-    margin: 50px auto;
-}
-
-
-
-footer {}

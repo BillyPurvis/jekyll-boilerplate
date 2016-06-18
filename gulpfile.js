@@ -70,8 +70,8 @@ gulp.task('sass', function () {
 gulp.task('watch', function () {
     'use strict';
     log('Watch files for changes');
-    gulp.watch('./_sass/*.scss', ['sass', 'jekyll']);
-    gulp.watch('./js/*.js', ['compressJs']);
+    gulp.watch('./_sass/partials/*.scss', ['sass', 'jekyll']);
+    gulp.watch('./js/*.js', ['compressJs', 'jekyll']);
     gulp.watch(['**/*.html', '*/*.md'], ['jekyll']);
 });
 

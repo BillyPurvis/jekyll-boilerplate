@@ -1,18 +1,27 @@
 <!DOCTYPE html>
-
 <html>
+  
+  <!-- Inject head -->
+  {% include head.html %}
 
-    {% include head.html %}
-    
-    <body>
-    
-        {% include header.html %}
-        
-    </body>
-    
-    <div class="main-content">
+<body>
+
+  <div class="site-wrap">
+      
+      <!-- Inject Header -->
+      {% include header.html %}
+
+      <!-- Main Container -->  
+      <div class="site-content">
         {{ content }}
-    </div>
+      </div>
+
+      <!-- Inject Footer -->
+      {% include footer.html %}
     
-    {% include footer.html %}
+  </div>
+
+  <!-- JavaScript Files -->
+  <script type="text/javascript" src="/js/scripts.min.js"></script>
+</body>
 </html>

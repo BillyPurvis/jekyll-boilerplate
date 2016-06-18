@@ -1,110 +1,156 @@
 <!DOCTYPE html>
-
 <html>
+  
+  <!-- Inject head -->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>Jekyll Boilerplate</title>
-  <meta name="description" content="Getting on the web is easy, but it's even easier with Jekyll-Boilerplate. 
+    <title>Jekyll Boilerplate</title>
+    <meta name="description" content="Getting on the web is easy, but it's even easier with Jekyll-Boilerplate. 
 ">
 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    
+    <!-- Main styles -->
+    <link rel="stylesheet" href="./css/main.min.css">
 
-  <link rel="stylesheet" href="./css/main.min.css">
-  
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-  <link rel="alternate" type="application/rss+xml" title="Jekyll Boilerplate" href="http://yourdomain.com/feed.xml" />
-      <script src="./js/scripts.min.js"></script>
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald" rel="stylesheet">
+    
+    <link rel="alternate" type="application/rss+xml" title="Jekyll Boilerplate" href="/feed.xml" />
 </head>
 
-    
-    <body>
-    
-        
-  
-<div class="site-wrap">
-  <header>
-   <div class="inner-header">
-        <div class="site-title-contain">
-            <a class="site-title" href="">Jekyll Boilerplate</a>
-        </div> 
-        <div class="menu-toggle">
-            <i class="fa fa-bars"></i>
-        </div> 
-    </div>
-    
-    <nav class="nav">
-        <ul class="nav-list">
-            <li class="nav-item">
-                <a href="/about">About</a>
-            </li>
-            <li class="nav-item">
-                <a href="#">Item 2</a>
-            </li>
-            <li class="nav-item">
-                <a href="#">Item 3</a>
-            </li>
-            <li class="nav-item">
-                <a href="#">Item 4</a>
-            </li>
-            <li class="nav-item">
-                <a href="#">Item 5</a>
-            </li>
-        </ul>
-    </nav>
+<body>
+
+  <div class="site-wrap">
+      
+      <!-- Inject Header -->
+      <header class="site-header">
 </header>
 
+      <!-- Main Container -->  
+      <div class="site-content">
+        	<!-- Content -->
+	<div class="home-landing full-page">
+		<div class="diamond large-diamond">
+			<div class="inner-diamond">
+				<h1 class="section-title">
+					Jekyll With Gulp
+				</h1>
+				<p class="section-text">
+					Get started with Jekyll, Gulp and generating
+					awesomely fast static sites perfect for portfolios
+				</p>
+				<img class="arrow-down" src="/images/arrow-down.svg">
+			</div>
+		</div>
+	</div>
 
+	<div class="block-contain">
+		<h1 class="section-title">
+			Eli5: Jekyll:
+		</h1>
+		<p class="section-text">
+			Jekyll is quite simply a static site generator
+			with the ability to blog with! Or anything. 
+			Using a mix of Markdown and Liquid templates.
+			You can build and serve static sites with a
+			modular code base. 
+		</p>
+		<p class="section-text">
+			This template simplifies processes, integrates
+			Sass minification for sass and JS while also
+			building Jekyll and then running a local web 
+			host to develop on. 
+		</p>
+	</div>
+	
+	<!-- Steps -->
+	<div class="block-contain">
+		<h1 class="section-title">
+			The Steps:
+		</h1>
+		<div class="steps-container">
+			<div class="diamond small-diamond">
+				<div class="inner-diamond">
+					<h1>ICON HERE</h1>
+					<h2 class="step-text">1. Fork the repo</h2>
+				</div>
+			</div>
+			<div class="diamond small-diamond">
+				<div class="inner-diamond">
+					<h1>ICON HERE</h1>
+					<h2 class="step-text">2. npm install</h2>
+				</div>
+			</div>
+			<div class="diamond small-diamond">
+				<div class="inner-diamond">
+					<h1>ICON HERE</h1>
+					<h2 class="step-text">3. gulp serve</h2>
+				</div>
+			</div>
+			<div class="diamond small-diamond">
+				<div class="inner-diamond">
+					<h1>ICON HERE</h1>
+					<h2 class="step-text">4. Build away!</h2>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Tips -->
+	<div class="block-contain">
+		<h1 class="section-title">
+			Tips and ideas:
+		</h1>
+		<p class="section-text">
+			The core of Jekyll is it’s ability to create blog
+			posts from MD files, among other ways. It’s
+			a really simple way to build a blog or 
+			portfolio site without the overhead of a CMS.
+		</p>
+		<p class="section-text">
+			It’s really worth reading through the docs -
+			they are quite small! 
+		</p>
+		<a class="ref-link" href="http://jekyllrb.com/">
+			http://jekyllrb.com/
+		</a>
+		<a class="ref-link" href="https://github.com/BillyPurvis/jekyll-boilerplate">
+			https://github.com/BillyPurvis/jekyll-boilerplate
+		</a>
+	</div>
 
-        
-    </body>
-    
-    <div class="main-content">
-        <div class="site-wrapper">
-   <div class="content-wrap">
-    <h1 class="page-title">
-        Welcome to Jekyll Boilerplate
-    </h1>
-    <hr/>
-    <p class="content-text">
-        You can download this template via git in a zip or clone the                 repository directly to your directory of choice.
-        
-        <code>git clone https://github.com/BillyPurvis/jekyll-boilerplate.git</code>
-    </p>
-        
-    <p class="content-text">
-        You'll need to have the Jekyll and Sass Ruby Gem installed, nodeJS,
-        NPM to install the required dependencies for development. To 
-        install the node modules, you can run 
+	<!-- Author -->
+	<div class="block-contain">
+		<h1 class="section-title">
+			Author: 
+		</h1>
+		<p class="section-text">
+			Howdy, I’m Billy and I’m a Front End
+			Developer living in London. I love all things 
+			logic (think Spock) and all things creative. 
+			For bugs, submit an issue on the repo 
+			<a class="thru-link" href="https://github.com/BillyPurvis/jekyll-boilerplate">here</a>
+		</p>
+		<p class="section-text">
+			For anything else, check out my Twitter
+			<a class="thru-link" href="https://twitter.com/mrmonkeytech">@mrmonkeytech</a>  
+		</p>
+	</div>
+      </div>
 
-        <code>npm install</code>
-        
-        for development. You'll also need gulp globally installed. 
-    </p>
-       
-    <p class="content-text">
-        The template is simple, the scss files are in the _sass dir and are 
-        being watched by gulp for changes, then Jekyll will be rebuilt into           _site which is then run via gulp-connect on port 4000. 
-    </p>
-       
-    <p class="content-text">
-        Jekyll's files are being watched too, adding a new directory, such as         /contact/index.html, gulp will recognize the new directory when               gulp serve task is run. 
-    </p>
-       
-    <p class="content-text">
-        To create drafts, store them into _drafts and when ready, you can 
-        move to the _posts directory for production.  
-    </p>
-    </div>
-</div>
+      <!-- Inject Footer -->
+      <footer class="site-footer">
 
-    </div>
-    
-    <footer>
 </footer>
-</div><!-- End of Site Wrap -->
+    
+  </div>
+
+  <!-- JavaScript Files -->
+  <script type="text/javascript" src="/js/scripts.min.js"></script>
+</body>
 </html>

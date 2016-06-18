@@ -1,0 +1,141 @@
+/* Shared re-usable elements | Mobile First */
+$Oswald: 'Oswald', sans-serif;
+$OpenSans: 'Open Sans', sans-serif;
+
+$diamond-l-: 60vh;
+$diamond-l-mobile: 35vh;
+
+$diamond-m: 231px;
+$diamond-m-mobile: 231px;
+
+$diamond-s: 120px;
+$diamond-s-mobile: 120px;
+
+@mixin rotate($deg) {
+	transform: rotate($deg);
+	-o-transform: rotate($deg);
+	-moz-transform: rotate($deg);
+	-webkit-transform: rotate($deg);
+}
+
+html {
+	font-size: 14px;
+	font-weight: normal;
+	color: $bodyFontGrey;
+	font-family: $OpenSans;
+	-webkit-font-smoothing: antialiased;
+}
+body {
+	margin: 0;
+	padding: 0;
+}
+h1 {
+	font-size: 1.6em;
+	position: relative;
+	font-weight: normal;
+	font-family: $Oswald;
+	color: $primaryFontCol;
+	letter-spacing: 0.025em;
+	text-transform: uppercase;
+	-webkit-font-smoothing: antialiased;
+}
+p,
+a {
+	color: $bodyFontGrey;
+	font-size: 0.85em;
+	position: relative;
+	text-decoration: none;
+}
+.thru-link {
+	text-decoration: underline;
+}
+.full-page {
+	width: 100%;
+	height: 100vh;
+	overflow-x: hidden;
+}
+.home-landing {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	align-content: center;
+	justify-content: center;
+}
+.block-contain {
+	width: 80%;
+	margin: 0 auto;
+	margin-bottom: 40px;
+	a,
+	.section-text {
+		font-size: 1.1em;
+		line-height: 1.5em;
+	}
+}
+.steps-container {
+	width: 80%;
+	margin: 0 auto;
+	margin-top: 40px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	align-content: center;
+	justify-content: center;
+	.step-text {
+		top: 78%;
+		color: $bodyFontGrey;
+		font-size: 1.1em;
+		position: relative;
+	}
+}
+// Diamond styling
+.diamond {
+	display: block;
+	position: relative;
+	@include rotate(45deg);
+	background: $diamondColor;
+}
+.inner-diamond {
+	display: block;
+	width: inherit;
+	height: inherit;
+	text-align: center;
+	@include rotate(-45deg);
+}
+.large-diamond {
+	width: $diamond-l-mobile;
+	height: $diamond-l-mobile;
+	h1 {
+		left: 5%;
+		top: 18%;
+	}
+	p {
+		left: 5%;
+		top: 15%;
+		color: $bodyWhite;
+	}
+	.arrow-down {
+		
+		top: 70%;
+		left: 10%;
+		right: 0;
+		width: 2em;
+		height: 4em;
+		display: block;
+		margin: 0 auto;
+		position: absolute;
+
+	}
+}
+.medium-diamond {
+	width: $diamond-m;
+	height: $diamond-m;
+}
+.small-diamond {
+	width: $diamond-s;
+	height: $diamond-s;
+	margin-bottom: 58%;
+	.inner-diamond {
+		left: 10%;
+		position: relative;
+	}
+}
