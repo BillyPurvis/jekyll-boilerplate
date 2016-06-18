@@ -48,8 +48,9 @@ gulp.task('jekyll', function (done) {
 gulp.task('compressJs', function () {
     'use strict';
     gulp.src('./js/scripts.js')
-        .pipe(uglify())
+        
         .pipe(rename({suffix: '.min'}))
+        .pipe(uglify())
         .pipe(gulp.dest('./js'));
 });
 
