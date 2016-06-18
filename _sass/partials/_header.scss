@@ -1,2 +1,18 @@
 header {
+	.github-link {
+		width: 100px;
+		display: block;
+		font-size: 1em;
+		color: $bodyWhite;
+		text-align: center;
+		padding: 10px 20px;
+		letter-spacing: 0.025em;
+		font-family: $OpenSans;
+		background: $diamondColor;
+
+		@media (min-width: 768px) {
+			z-index: 100;
+			position: fixed;
+		}
+	}
 }
