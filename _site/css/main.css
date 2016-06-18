@@ -10,6 +10,10 @@ body {
   margin: 0;
   padding: 0; }
 
+.site-content {
+  margin: 0 auto;
+  max-width: 1280px; }
+
 h1 {
   font-size: 1.6em;
   position: relative;
@@ -33,7 +37,7 @@ a {
 .full-page {
   width: 100%;
   height: 100vh;
-  overflow-x: hidden; }
+  overflow: hidden; }
 
 .home-landing {
   display: -webkit-flex;
@@ -60,6 +64,9 @@ a {
   .block-contain .section-text {
     font-size: 1.1em;
     line-height: 1.5em; }
+  .block-contain .ref-link {
+    display: block;
+    line-height: 1.5em; }
 
 .steps-container {
   width: 80%;
@@ -81,10 +88,29 @@ a {
       -ms-flex-pack: center;
           justify-content: center; }
   .steps-container .step-text {
-    top: 78%;
+    top: 60%;
+    left: -10%;
     color: #4d4d4d;
     font-size: 1.1em;
     position: relative; }
+  @media (min-width: 568px) {
+    .steps-container {
+      -webkit-flex-wrap: wrap;
+          -ms-flex-wrap: wrap;
+              flex-wrap: wrap;
+      -webkit-flex-direction: row;
+          -ms-flex-direction: row;
+              flex-direction: row; } }
+
+.fa {
+  top: 18px;
+  left: -10px;
+  color: #fff;
+  font-size: 5em !important;
+  position: relative; }
+
+.fa-code-fork {
+  left: 0; }
 
 .diamond {
   display: block;
@@ -126,6 +152,31 @@ a {
     display: block;
     margin: 0 auto;
     position: absolute; }
+  @media (min-width: 568px) {
+    .large-diamond {
+      width: 60vh;
+      height: 60vh; } }
+  @media (min-width: 768px) {
+    .large-diamond {
+      width: 40vh;
+      height: 40vh; }
+      .large-diamond h1 {
+        font-size: 3em; }
+      .large-diamond p {
+        font-size: 1.5em; } }
+  @media (min-width: 1024px) {
+    .large-diamond h1 {
+      font-size: 2.2em; }
+    .large-diamond p {
+      font-size: 1em; } }
+  @media (min-width: 1280px) {
+    .large-diamond {
+      width: 60vh;
+      height: 60vh; }
+      .large-diamond h1 {
+        font-size: 2.8em; }
+      .large-diamond p {
+        font-size: 1.3em; } }
 
 .medium-diamond {
   width: 231px;
@@ -138,3 +189,11 @@ a {
   .small-diamond .inner-diamond {
     left: 10%;
     position: relative; }
+  @media (min-width: 568px) {
+    .small-diamond {
+      margin: 14% 8%; } }
+  @media (min-width: 1280px) {
+    .small-diamond {
+      margin-top: 20px;
+      margin-left: auto;
+      margin-right: auto; } }

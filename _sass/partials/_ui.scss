@@ -2,7 +2,7 @@
 $Oswald: 'Oswald', sans-serif;
 $OpenSans: 'Open Sans', sans-serif;
 
-$diamond-l-: 60vh;
+$diamond-l: 60vh;
 $diamond-l-mobile: 35vh;
 
 $diamond-m: 231px;
@@ -29,6 +29,10 @@ body {
 	margin: 0;
 	padding: 0;
 }
+.site-content {
+	margin: 0 auto;
+	max-width: 1280px;
+}
 h1 {
 	font-size: 1.6em;
 	position: relative;
@@ -52,7 +56,7 @@ a {
 .full-page {
 	width: 100%;
 	height: 100vh;
-	overflow-x: hidden;
+	overflow: hidden;
 }
 .home-landing {
 	display: flex;
@@ -70,6 +74,10 @@ a {
 		font-size: 1.1em;
 		line-height: 1.5em;
 	}
+	.ref-link {
+		display: block;
+		line-height: 1.5em;
+	}
 }
 .steps-container {
 	width: 80%;
@@ -81,11 +89,26 @@ a {
 	align-content: center;
 	justify-content: center;
 	.step-text {
-		top: 78%;
+		top: 60%;
+		left: -10%;
 		color: $bodyFontGrey;
 		font-size: 1.1em;
 		position: relative;
 	}
+	@media (min-width: 568px) {
+		flex-wrap: wrap;
+		flex-direction: row;
+	}
+}
+.fa {
+	top: 18px;
+	left: -10px;
+	color: $bodyWhite;
+	font-size: 5em!important;
+	position: relative;
+}
+.fa-code-fork {
+	left: 0;
 }
 // Diamond styling
 .diamond {
@@ -114,7 +137,6 @@ a {
 		color: $bodyWhite;
 	}
 	.arrow-down {
-		
 		top: 70%;
 		left: 10%;
 		right: 0;
@@ -123,7 +145,38 @@ a {
 		display: block;
 		margin: 0 auto;
 		position: absolute;
-
+	}
+	@media (min-width: 568px) {
+		width: $diamond-l;
+		height: $diamond-l;
+	}
+	@media (min-width: 768px) {
+		width: 40vh;
+		height: 40vh;
+		h1 {
+			font-size: 3em;
+		}
+		p {
+			font-size: 1.5em;
+		}
+	}
+	@media (min-width: 1024px) {
+		h1 {
+			font-size: 2.2em;
+		}
+		p {
+			font-size: 1em;
+		}
+	}
+	@media (min-width: 1280px) {
+		width: $diamond-l;
+		height: $diamond-l;
+		h1 {
+			font-size: 2.8em;
+		}
+		p {
+			font-size: 1.3em;
+		}
 	}
 }
 .medium-diamond {
@@ -137,5 +190,13 @@ a {
 	.inner-diamond {
 		left: 10%;
 		position: relative;
+	}
+	@media (min-width: 568px) {
+		margin: 14% 8%;
+	}
+	@media (min-width: 1280px) {
+		margin-top: 20px;
+		margin-left: auto;
+		margin-right: auto;
 	}
 }
